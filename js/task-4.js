@@ -3,4 +3,25 @@
 // Создай функции increment и decrement для увеличения и уменьшения значения счетчика
 // Добавь слушатели кликов на кнопки, вызовы функций и обновление интерфейса
 
-console.log('task-4');
+const buttonsRef = document.querySelectorAll('#counter button');
+let btnDecRef;
+let btnIncRef;
+buttonsRef.forEach(el => (el.dataset.action === 'decrement' ? (btnDecRef = el) : (btnIncRef = el)));
+
+const counterRef = document.querySelector('span');
+let counterValue = counterRef.textContent;
+
+btnDecRef.addEventListener('click', decrement);
+btnIncRef.addEventListener('click', increment);
+
+function increment() {
+  !isNaN(counterValue) ? (counterValue = Number(counterValue) + 1) : counterValue;
+  console.log(counterValue);
+  counterRef.textContent = counterValue;
+}
+
+function decrement() {
+  !isNaN(counterValue) ? (counterValue = Number(counterValue) - 1) : counterValue;
+  console.log(counterValue);
+  counterRef.textContent = counterValue;
+}

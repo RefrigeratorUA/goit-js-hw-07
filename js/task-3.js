@@ -23,26 +23,28 @@ const images = [
   },
 ];
 
-const gallery = images.map(({ url, alt }) => {
-  return `<li class='gallery-list-item'><img src='${url}' alt='${alt}' class='gallery-list-img'></li>`;
+const gallery = images
+  .map(({ url, alt }) => {
+    return `<li class='gallery-list-item'><img src='${url}' alt='${alt}' class='gallery-list-img'></li>`;
 
-  // Без шаблонных строк:
+    // Без шаблонных строк:
 
-  // const imgRef = document.createElement('img');
-  // imgRef.setAttribute('src', url);
-  // imgRef.alt = alt;
-  // imgRef.classList.add('gallery-list-img');
+    // const imgRef = document.createElement('img');
+    // imgRef.setAttribute('src', url);
+    // imgRef.alt = alt;
+    // imgRef.classList.add('gallery-list-img');
 
-  // const listItemRef = document.createElement('li');
-  // listItemRef.appendChild(imgRef);
-  // listItemRef.classList.add('gallery-list-item');
+    // const listItemRef = document.createElement('li');
+    // listItemRef.appendChild(imgRef);
+    // listItemRef.classList.add('gallery-list-item');
 
-  // return listItemRef.outerHTML;
-});
+    // return listItemRef.outerHTML;
+  })
+  .join('');
 
 console.log(gallery);
 
 const galleryListRef = document.querySelector('#gallery');
 galleryListRef.classList.add('gallery-list');
 
-galleryListRef.insertAdjacentHTML('afterbegin', gallery.join(''));
+galleryListRef.insertAdjacentHTML('afterbegin', gallery);

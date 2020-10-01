@@ -280,11 +280,13 @@ summary {
   border: 3px solid #bdbdbd;
 }
 
-#validation-input.valid {
+#validation-input.valid,
+.valid {
   border-color: #4caf50;
 }
 
-#validation-input.invalid {
+#validation-input.invalid,
+.invalid {
   border-color: #f44336;
 }
 /*# sourceMappingURL=main.css.map */

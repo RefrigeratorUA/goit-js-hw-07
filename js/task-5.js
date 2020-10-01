@@ -2,4 +2,10 @@
 // подставляет его текущее значение в span#name - output.Если инпут пустой,
 // в спане должна отображаться строка 'незнакомец'.
 
-console.log('task-5');
+const inputRef = document.querySelector('#name-input');
+const outputRef = document.querySelector('#name-output');
+
+inputRef.addEventListener('input', () => {
+  outputRef.textContent = inputRef.value === '' ? 'незнакомец' : inputRef.value;
+  console.log(outputRef.textContent);
+});
